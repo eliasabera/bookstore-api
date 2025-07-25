@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const connectToBB= async ()=> {
+const connectToDB= async ()=> {
     try {
         await mongoose
           .connect(
-            process.env.MongooseURL || "mongodb://localhost:27017/bookstrore"
+            "mongodb://localhost:27017/bookstore"
           )
           .then(() => {
             console.log("connected");
@@ -15,4 +15,4 @@ const connectToBB= async ()=> {
         if(e) throw e
     }
 }
-module.exports=connectToBB
+module.exports=connectToDB
